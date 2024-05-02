@@ -7,6 +7,8 @@ from logging.handlers import RotatingFileHandler
 app = Flask(__name__)
 
 LOGFILE='/shared/ShutApp.log'
+MESSAGEFILE='/shared/SHUTSHUT'
+
 logging.basicConfig(filename=LOGFILE, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 @app.route('/')
@@ -18,7 +20,7 @@ def index():
 @app.route('/shutdown', methods=['POST'])
 def shutdown():
 
-    with open('/shared/SHUTSHUT', 'w') as f:
+    with open(MESSAGEFILE, 'w') as f:
         f.write('Shutdown initiated to messagefile')
         app.logger.info('Host shutting down request initiated to messagefile ...')
         return 'Host shutting down has bee requested...'
