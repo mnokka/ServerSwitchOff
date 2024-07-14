@@ -26,7 +26,7 @@ def shutdown():
     with open(MESSAGE_FILE, 'w') as f:
         f.write('Shutdown initiated to messagefile')
         app.logger.info('Host shutting down request initiated to messagefile ...')
-        return 'Host shutting down has bee requested (Serverin virrat sammutellaan kohtapuoliin)...'
+        return 'Host shutting down has been requested (Serverin virrat sammutellaan kohtapuoliin)...'
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
