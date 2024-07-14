@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 BASE_DIR=/var/tmp/shutdown_app
 MESSAGE_FILE=$BASE_DIR/SHUTSHUT

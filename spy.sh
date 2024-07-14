@@ -1,4 +1,5 @@
-#!/bin/bash
+
+#!/usr/bin/env bash`
 
 
 BASE_DIR="/var/tmp/shutdown_app"
@@ -17,7 +18,7 @@ if [ -f "$MESSAGE_FILE" ]; then
     rm -f $MESSAGE_FILE
     logmessage "Asked host to shutdown"
     logmessage "Removed shutdown message file"
-    sudo /sbin/shutdown -h now  
+    sudo shutdown -h now  
 else
     logmessage "Shutdown file ($MESSAGE_FILE) not found. Continuing normal operation."
 fi
